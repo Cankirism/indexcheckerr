@@ -1,0 +1,27 @@
+{
+  "name": "indexcheckeer",
+  "version": "1.0.0",
+  "description": "index checker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "Node api/index.js"
+  },
+  "keywords": [
+    "index",
+    "checker",
+    "google",
+    "index",
+    "crawling",
+    "index"
+  ],
+  "author": "faruk güngör",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "express-rate-limit": "^7.4.0",
+    "unirest": "^0.6.0"
+  }
+}
