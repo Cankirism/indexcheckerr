@@ -35,7 +35,7 @@ const Form =({handleData})=>{
       }
       catch(err){
         console.log("hatayı yakalım",err)
-        toast.error(err)
+        toast.error("!"+err)
         setLoading(false);
       }
        
