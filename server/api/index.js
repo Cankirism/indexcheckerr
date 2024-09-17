@@ -31,6 +31,7 @@ const getOrganicData = async (inspectionUrl) => {
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36",
     })
     .then(async (response) => {
+      console.log("full url is",seachUrl+inspectionUrl)
       //console.log("response is",response.body)
       let $ = cheerio.load(response.body);
 
