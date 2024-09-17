@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json({ limit: "300mb" }));
 const apiLimitter = rate({
   windowMs: 1000 * 60*24,
-  max: 100,
+  max: 10,
   message:"Only 10 Request / 1 Day allowed for free plan"
   });
 
@@ -136,8 +136,8 @@ app.post("/api/indexResults",apiLimitter,async(req,res)=>{
    await Promise.all(
     splittedUrl.map(async (item,key)=>{
      
-      if(isValidUrl(item)){
-        const result = await getIndexResults(item)
+      if(isValidUrl(item.trim())){
+        const result = await getIndexResults(item.trim())
         results.push({
         url:item,
         result:result.results
