@@ -11,8 +11,8 @@ app.use(cors());
 app.use(express.json({ limit: "300mb" }));
 const apiLimitter = rate({
   windowMs: 1000 * 60*24,
-  max: 15,
-  message:"Only 15 Request / 1 Day allowed for free plan"
+  max: 10,
+  message:"Only 10 Request / 1 Day allowed for free plan"
   });
 
 process.on("unhandledRejection",(error)=>{
@@ -158,10 +158,9 @@ app.post("/api/indexResults",apiLimitter,async(req,res)=>{
     
   }
   catch(err){
-    res.status(400).send({
-      status:"error",
-      message:err.message
-    })
+    res.status(400).send(
+     err.message
+    )
   }
 })
 
