@@ -28,14 +28,21 @@ const Form =({handleData})=>{
         else  {
           console.log("status 200 değil")
          
-          throw new Error(result)
+          throw new Error(result.data.message)
         }
          
       }
       }
       catch(err){
-        console.log("hatayı yakalım",err)
-        toast.error("!"+err)
+        console.log("hata is",err.message)
+        if(err.message){
+          toast.error("!"+err.message)
+        }
+        else {
+          toast.error("!"+err)
+
+        }
+    
         setLoading(false);
       }
        
