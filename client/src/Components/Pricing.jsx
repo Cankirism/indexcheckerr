@@ -31,10 +31,10 @@ const Pricing = ()=>{
             <div class="my-5 hidden px-5 text-center peer-checked:block sm:text-left md:block lg:my-8 lg:px-10">
               <ul class="">
                 <li class="mb-2">
-                  <p class="font-sans text-base lg:text-base lg:leading-6">✓<b class="  "> 10 Request</b></p>
+                  <p class="font-sans text-base lg:text-base lg:leading-6">✓<b class="  "> 15 Request</b></p>
                 </li>
                 <li class="mb-2">
-                  <p class="font-sans text-base lg:text-base lg:leading-6">✓ 100 Url</p>
+                  <p class="font-sans text-base lg:text-base lg:leading-6">✓ 150 Url</p>
                 </li>
                
               </ul>
