@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json({ limit: "300mb" }));
 const apiLimitter = rate({
   windowMs: 1000 * 60*24,
-  max: 10,
+  max: 100,
   message:"Only 10 Request / 1 Day allowed for free plan"
   });
 
@@ -63,7 +63,7 @@ const getOrganicData = async (inspectionUrl) => {
      
       
       organicResult.map((data) => {
-        console.log(data.links);
+        console.log("google url",data.links);
         console.log(inspectionUrl);
         if (inspectionUrl===data.links||inspectionUrl===data.links+"/") {
           console.log("indexxed");
