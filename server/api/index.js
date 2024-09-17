@@ -66,7 +66,7 @@ const getOrganicData = async (inspectionUrl) => {
       organicResult.map((data) => {
         console.log("google url",data.links);
         console.log(inspectionUrl);
-        if (data.links.includes(inspectionUrl)) {
+        if (inspectionUrl===link||inspectionUrl===link+"/") {
           console.log("indexxed");
           
           indexed = true;
