@@ -66,10 +66,14 @@ const getOrganicData = async (inspectionUrl) => {
       organicResult.map((data) => {
         console.log("google url",data.links);
         console.log(inspectionUrl);
-        if (data.links==inspectionUrl||data.links+"/"==inspectionUrl) {
-          console.log("google indexxed");
+        // if (data.links==inspectionUrl||data.links+"/"==inspectionUrl) {
+        //   console.log("google indexxed");
           
-          indexed = true;
+        //   indexed = true;
+        // }
+        if(data.links.includes(inspectionUrl)){
+          console.log("google indexed");
+          indexed=true;
         }
       });
       return indexed;
@@ -98,9 +102,13 @@ const getBingData = async (inspectionUrl) => {
      
       links.map((link) => {
         console.log("bing links are",link)
-        if (inspectionUrl===link||inspectionUrl===link+"/") {
-          indexed = true;
-          console.log("bing indexed")
+        // if (inspectionUrl===link||inspectionUrl===link+"/") {
+        //   indexed = true;
+        //   console.log("bing indexed")
+        // }
+        if(link.includes(inspectionUrl)){
+          indexed=true;
+          console.log("bing indexed");
         }
       });
       return indexed;
