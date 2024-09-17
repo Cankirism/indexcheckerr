@@ -1,6 +1,6 @@
 import axios from "axios"
 import Header from "../Components/Header";
-const baseUrl = "http://localhost:5630/api";
+const baseUrl = "https://indexcheckerr-be.vercel.app/api";
 const api = axios.create({
 baseURL:baseUrl
 })
