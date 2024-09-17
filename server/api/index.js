@@ -97,6 +97,7 @@ const getBingData = async (inspectionUrl) => {
       });
      
       links.map((link) => {
+        console.log("bing links are",link)
         if (inspectionUrl===link||inspectionUrl===link+"/") {
           indexed = true;
           console.log("bing indexed")
