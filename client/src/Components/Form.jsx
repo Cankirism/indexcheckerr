@@ -26,13 +26,16 @@ const Form =({handleData})=>{
 
         }
         else  {
-          throw new Error(result.data)
+          console.log("status 200 değil")
+         
+          throw new Error(result)
         }
          
       }
       }
       catch(err){
-        toast.error(err.message)
+        console.log("hatayı yakalım",err)
+        toast.error(err)
         setLoading(false);
       }
        

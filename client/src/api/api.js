@@ -1,5 +1,6 @@
 import axios from "axios"
 import Header from "../Components/Header";
+import toast from "react-hot-toast";
 const baseUrl = "https://indexcheckerr-be.vercel.app/api";
 //const baseUrl = "http://localhost:5630/api"
 const api = axios.create({
@@ -14,7 +15,7 @@ export const postUrls = async(urlList)=>{
         }
        
     }).catch((err)=>{
-        return err.response
+      throw new Error(err.response.data.message);
     });
 
 }
