@@ -25,7 +25,7 @@ const getOrganicData = async (inspectionUrl) => {
   }
   let indexed = false;
   return unirest
-    .get(seachUrl + "https://www.farukgungor.com/")
+    .get(seachUrl+inspectionUrl)
     .headers({
       "User-Agent":
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36",
@@ -65,7 +65,7 @@ const getOrganicData = async (inspectionUrl) => {
       organicResult.map((data) => {
         console.log("google url",data.links);
         console.log(inspectionUrl);
-        if (data.links.contain(inspectionUrl)) {
+        if (data.links.includes(inspectionUrl)) {
           console.log("indexxed");
           
           indexed = true;
@@ -134,7 +134,7 @@ app.post("/api/indexResults",apiLimitter,async(req,res)=>{
    let results = [];
    await Promise.all(
     splittedUrl.map(async (item,key)=>{
-      console.log(typeof(item));
+     
       if(isValidUrl(item)){
         const result = await getIndexResults(item)
         results.push({
