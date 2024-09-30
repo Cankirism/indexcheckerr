@@ -15,7 +15,7 @@ const apiLimitter = rate({
   message:"Only 10 Request / 1 Day allowed for free plan",
     
 });
-app.set('trust proxy',true);
+
 process.on("unhandledRejection",(error)=>{
   console.log("unhandledrejection",error.message)
 })
@@ -28,9 +28,10 @@ const getOrganicData = async (inspectionUrl) => {
   return unirest
     .get(seachUrl+inspectionUrl)
     .headers({
-   //   "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36",
-    })
+    //  "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+"User-Agent": " Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36",
+      
+})
     .then(async (response) => {
       console.log("full url is",seachUrl+inspectionUrl)
       //console.log("response is",response.body)
