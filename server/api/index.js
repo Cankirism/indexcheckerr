@@ -12,9 +12,10 @@ app.use(express.json({ limit: "300mb" }));
 const apiLimitter = rate({
   windowMs: 1000 * 60*24,
   max: 1000,
-  message:"Only 10 Request / 1 Day allowed for free plan"
-  });
-
+  message:"Only 10 Request / 1 Day allowed for free plan",
+    
+});
+app.set('trust proxy',true);
 process.on("unhandledRejection",(error)=>{
   console.log("unhandledrejection",error.message)
 })
